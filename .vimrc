@@ -17,6 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 "my plugin
 Plugin 'taglist.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "
 
