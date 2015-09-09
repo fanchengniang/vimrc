@@ -1,5 +1,6 @@
 set number
 set hls
+syntax on
 
 "Vundle{
 set nocompatible              " be iMproved, required
@@ -17,6 +18,8 @@ Plugin 'gmarik/Vundle.vim'
 "my plugin
 Plugin 'taglist.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
 "
 
 " All of your Plugins must be added before the following line
@@ -29,9 +32,18 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Use_Right_Window=1
-map <silent> <F9> :TlistToggle<cr>
+map <silent> <F9> :TlistToggle<CR>
 "
 
 "nerdtree
-map <F8> :NERDTreeToggle<CR>
+map <silent> <F8> :NERDTreeToggle<CR>
+"
+
+"vim-airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled=1
+map <silent> <F3> :bp<CR>
+map <silent> <F4> :bn<CR>
+map <silent> <F5> :bd<CR>
+set t_Co=256
 "
