@@ -47,3 +47,10 @@ map <silent> <F4> :bn<CR>
 map <silent> <F5> :bd<CR>
 set t_Co=256
 "
+
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set list
+set listchars=tab:>-,trail:-
+set colorcolumn=80
