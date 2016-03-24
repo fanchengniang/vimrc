@@ -20,6 +20,7 @@ Plugin 'taglist.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
+"Plugin 'Valloric/YouCompleteMe'
 "
 
 " All of your Plugins must be added before the following line
@@ -54,3 +55,43 @@ set expandtab
 set list
 set listchars=tab:>-,trail:-
 set colorcolumn=80
+
+"set omnicppcomplete
+set nocp
+filetype plugin on
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+set completeopt=menu,longest
+
+"set cscope
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set csto=0
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+endif
+
+"0 or s: Find this C symbol
+"1 or g: Find this definition
+"2 or d: Find functions called by this function
+"3 or c: Find functions calling this function
+"4 or t: Find this text string
+"6 or e: Find this egrep pattern
+"7 or f: Find this file
+"8 or i: Find files #including this file
+nmap <F6>s :vert botright scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <F6>g :vert botright scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <F6>c :vert botright scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <F6>t :vert botright scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <F6>e :vert botright scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <F6>f :vert botright scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <F6>i :vert botright scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <F6>d :vert botright scs find d <C-R>=expand("<cword>")<CR><CR>
+map <C-F11> :!cscope -Rbq<CR>

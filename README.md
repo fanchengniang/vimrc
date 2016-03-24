@@ -15,5 +15,6 @@ I have bind some key to simplify some command:
 > F4: switch to the next file  
 > F8: open nerdtree  
 > F9: open taglist  
+> F6: start cscope operation  
 
 **Hope you enjoy it!**
