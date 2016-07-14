@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
 Plugin 'rust-lang/rust.vim'
+Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 "
 
@@ -96,3 +97,13 @@ nmap <F6>f :vert botright scs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <F6>i :vert botright scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <F6>d :vert botright scs find d <C-R>=expand("<cword>")<CR><CR>
 map <C-F11> :!cscope -Rbq<CR>
+
+"set syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
