@@ -20,6 +20,7 @@ Plugin 'taglist.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'bling/vim-airline'
+Plugin 'rust-lang/rust.vim'
 "Plugin 'Valloric/YouCompleteMe'
 "
 
